@@ -23,7 +23,8 @@
                         <div class="col-12">
                             <h1 class="display-1 text-light">Todo-List</h1>
                             <ul class="list-group list-group-flush border border-1 rounded">
-                                <li v-for="(task, index) in todolist" :key="index" class="list-group-item ">{{task}}
+                                <li v-for="(task, index) in todolist" :key="index" class="list-group-item ">
+                                    {{task}}
                                 </li>
                             </ul>
                         </div>
