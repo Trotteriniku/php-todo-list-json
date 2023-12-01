@@ -23,8 +23,15 @@ if (isset($_POST['task'])) {
     file_put_contents('todo-list.json', json_encode($list));
 }
 
+// cerchiamo l'indice cliccato e scambiamo la sua proprieta done nel suo contrario
 if (isset($_POST['index'])) {
     $list[$_POST['index']]['done'] = !$list[$_POST['index']]['done'];
+    file_put_contents('todo-list.json', json_encode($list));
+}
+
+// cerchiamo l'indice cliccato e lo eliminiamo
+if (isset($_POST['indexToDelete'])) {
+    array_splice($list, $_POST['indexToDelete'], 1);
     file_put_contents('todo-list.json', json_encode($list));
 }
 

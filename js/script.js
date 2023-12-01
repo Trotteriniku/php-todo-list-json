@@ -35,6 +35,14 @@ createApp({
       axios.post(this.apiUrl, data).then((response) =>{
         this.todolist = response.data;
       })
+    },
+    taskRemover(index){
+      const data = new FormData();
+      data.append("indexToDelete", index);
+      
+      axios.post(this.apiUrl, data).then((response) =>{
+        this.todolist = response.data;
+      })
     }
   },
 
