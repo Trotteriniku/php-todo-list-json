@@ -26,6 +26,7 @@ createApp({
         this.todolist = response.data;
       })
       
+      this.newTask="";
     }
   },
 
@@ -33,3 +34,5 @@ createApp({
     this.readList();
   },
 }).mount("#app");
+
+

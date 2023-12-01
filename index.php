@@ -23,8 +23,9 @@
                         <div class="col-12">
                             <h1 class="display-1 text-light">Todo-List</h1>
                             <ul class="list-group list-group-flush border border-1 rounded">
-                                <li v-for="(task, index) in todolist" :key="index" class="list-group-item ">
-                                    {{task}}
+                                <li v-for="(task, index) in todolist" :key="index" class="list-group-item"
+                                    :class="{'text-decoration-line-through' : task.done}">
+                                    {{task.name}}
                                 </li>
                             </ul>
                         </div>
@@ -38,7 +39,8 @@
                             <div class="input-group mb-3">
                                 <input v-model="newTask" type="text" class="form-control"
                                     placeholder="Inserisci elemento..."
-                                    aria-label="Inserisci nuovo elemento per la lista" aria-describedby="button-add">
+                                    aria-label="Inserisci nuovo elemento per la lista" aria-describedby="button-add"
+                                    @keyup.enter="addTask">
                                 <button class="btn btn-outline-warning" type="button" id="button-add"
                                     @click="addTask">Inserisci</button>
                             </div>
