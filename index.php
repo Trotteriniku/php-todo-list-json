@@ -15,21 +15,21 @@
 
 <body>
 
-    <div class="wrapcontainer">
+    <div class="wrapcontainer ">
         <div id="app">
             <section class="todo-list py-3">
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
                             <h1 class="display-1 text-light">Todo-List</h1>
-                            <ul class="list-group list-group-flush border border-1 rounded ">
+                            <ul class="list-group list-group-flush border border-1 rounded shadowfilt ">
                                 <li v-for="(task, index) in todolist" :key="index"
-                                    class="list-group-item d-flex justify-content-between">
+                                    class="list-group-item d-flex justify-content-between align-items-center gap-4">
                                     <span :class="{'text-decoration-line-through' : task.done}"
                                         @click="markToggle(index)">{{task.name}}</span>
 
-                                    <span class="btn btn-outline-danger pointer-event"
-                                        @click="taskRemover(index)">elimina</span>
+                                    <span class="btn btn-outline-warning pointer-event " @click="taskRemover(index)">
+                                        elimina</span>
                                 </li>
                             </ul>
                         </div>
@@ -39,8 +39,8 @@
             <section class="add-todo">
                 <div class="container">
                     <div class="row">
-                        <div class="col-12">
-                            <div class="input-group mb-3">
+                        <div class="col-12 mt-4 ">
+                            <div class="input-group mb-3  shadowfilt">
                                 <input v-model="newTask" type="text" class="form-control"
                                     placeholder="Inserisci elemento..."
                                     aria-label="Inserisci nuovo elemento per la lista" aria-describedby="button-add"
