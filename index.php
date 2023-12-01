@@ -24,7 +24,7 @@
                             <h1 class="display-1 text-light">Todo-List</h1>
                             <ul class="list-group list-group-flush border border-1 rounded">
                                 <li v-for="(task, index) in todolist" :key="index" class="list-group-item"
-                                    :class="{'text-decoration-line-through' : task.done}">
+                                    :class="{'text-decoration-line-through' : task.done}" @click="markToggle(index)">
                                     {{task.name}}
                                 </li>
                             </ul>

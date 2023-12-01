@@ -23,7 +23,10 @@ if (isset($_POST['task'])) {
     file_put_contents('todo-list.json', json_encode($list));
 }
 
-
+if (isset($_POST['index'])) {
+    $list[$_POST['index']]['done'] = !$list[$_POST['index']]['done'];
+    file_put_contents('todo-list.json', json_encode($list));
+}
 
 header('Content-Type: application/json');
 
